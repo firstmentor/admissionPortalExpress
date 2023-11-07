@@ -1,0 +1,208 @@
+<%- include('./header.ejs') %>
+
+<div class="container-fluid">
+
+    <!-- <div class="col-md-12">
+        <img src="images\ARIIA_ITMRanking.jpg">
+    </div> -->
+
+    <div class="container-fluid">
+        <div class="col-md-12 text-center mt-5">
+            <h1>HELLO <span style="color: #4341419c;"><%= n %></span></span> <i class="fa-solid fa-face-grin-wide" style="padding-left: 10px;"></i></h1>
+            <p style="display: block; text-align: justify; padding:16px" class="para mt-4 mb-5">Explore our three distinct academic programs: BTech, MTech, and BCA. Our BTech program is tailored for aspiring engineers and technologists, offering a comprehensive education in technology and innovation. For those looking to specialize and advance their technical careers, our MTech program delves deeper into specialized areas, pushing the boundaries of knowledge. Our BCA program provides a solid foundation in computer science and applications, preparing students for careers in software development and IT management. With a commitment to high-quality education, we offer diverse opportunities for students to achieve their goals and realize their potential. Choose your path and start your journey with us today.</p>
+           
+            
+        </div>
+        <div class="row adm_modal_bg">
+          <h2 class="mb-5">Register your course...</h2>
+            <div class="col-md-4 ">
+                <!-- m -->
+                
+                <div class="card mx-auto text-center" style="width: 15rem;">
+                    <img src="images\1.png"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        
+                            <% if(b){   %>
+                              <a href="/course_display" class="btn btn-primary">Display</a>
+                                 <% }else{   %>
+                              <a href="#" data-bs-target="#btech" data-bs-toggle="modal" class="btn btn-primary">Register</a>
+                              <% } %>
+                    </div>
+                </div>
+
+                <!-- m -->
+            </div>
+            <div class="col-md-4 ">
+                
+                <div class="card mx-auto text-center" style="width: 15rem;">
+                    <img src="images\2.png"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the
+                            bulk of the card's
+                            content.</p>
+                            <% if(bca){   %>
+                              <a href="/course_display" class="btn btn-primary">Display</a>
+                                 <% }else{   %>
+                              <a href="#" data-bs-target="#bca" data-bs-toggle="modal" class="btn button_color">Register</a>
+                              <% } %>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 ">
+                
+                <div class="card mx-auto text-center" style="width: 15rem; ">
+                    <img src="images\3.png"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the
+                            bulk of the card's
+                            content.</p>
+                            <% if(m){   %>
+                              <a href="/course_display" class="btn btn-primary">Display</a>
+                                 <% }else{   %>
+                              <a href="#" data-bs-target="#mtech" data-bs-toggle="modal" class="btn btn-primary">Register</a>
+                              <% } %>
+                    </div>
+                </div>
+
+            </div>
+        </div><!--row end-->
+
+    </div><!--containber end-->
+</div><!--container end-->
+
+<!-- btech  modal -->
+<div class="modal fade" id="btech" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">B Tech</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+       <form action="/course_input" method="post">
+        <div class="mb-3">
+          <label>Name:</label>
+          <input type="text" name="name" value="<%= n %>" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Email:</label>
+          <input type="email" name="email" value="<%= e %>" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Phone:</label>
+          <input type="number" name="phone" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>City:</label>
+          <input type="text" name="city" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Address:</label>
+          <input type="text" name="address" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Course:</label>
+          <input type="text" name="course" value="Btech" class="form-control" >
+        </div>
+        <button class="btn btn-info" type="submit">Submit</button>
+        </form>
+    </div>
+   
+  </div>
+</div>
+</div>
+<!-- btech modal end -->
+
+<!-- bca  modal -->
+<div class="modal fade" id="bca" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">BCA</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+       <form action="/course_input" method="post">
+        <div class="mb-3">
+          <label>Name:</label>
+          <input type="text" name="name"  class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Email:</label>
+          <input type="email" name="email"  class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Phone:</label>
+          <input type="number" name="phone" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>City:</label>
+          <input type="text" name="city" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Address:</label>
+          <input type="text" name="address" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Course:</label>
+          <input type="text" name="course" value="BCA" class="form-control" >
+        </div>
+        <button class="btn btn-info" type="submit">Submit</button>
+        </form>
+    </div>
+   
+  </div>
+</div>
+</div>
+<!-- bca modal end -->
+<!-- mtech  modal -->
+<div class="modal fade" id="mtech" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">M Tech</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+       <form action="/course_input" method="post">
+        <div class="mb-3">
+          <label>Name:</label>
+          <input type="text" name="name"  class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Email:</label>
+          <input type="email" name="email"  class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Phone:</label>
+          <input type="number" name="phone" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>City:</label>
+          <input type="text" name="city" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Address:</label>
+          <input type="text" name="address" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label>Course:</label>
+          <input type="text" name="course" value="Mtech" class="form-control" >
+        </div>
+        <button class="btn btn-info" type="submit">Submit</button>
+        </form>
+    </div>
+   
+  </div>
+</div>
+</div>
+<!-- mtech modal end -->
+
+<%- include('./footer.ejs') %>  

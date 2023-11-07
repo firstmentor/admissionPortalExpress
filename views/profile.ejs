@@ -1,0 +1,144 @@
+<%- include('./header.ejs') %>
+    <div class="container-fluid">
+        
+            <div class="row">
+                <div class="col-md-6 mx-auto shadow-lg" style="height:570px; background-color: rgb(255, 255, 255);">
+
+                    <div class="container-fluid mt-3 py-4"
+                        style="border-radius:25px; box-shadow:5px 5px 5px 5px rgb(225, 223, 223) ;">
+                        <div class="row">
+                            <div class="col-md-3 ">
+                                <a href="/profile" class="nav-link">
+                                    <center> <img src="<%= i.url %>" width="160px" height="180px"
+                                            class="rounded-circle border border-dark"></center>
+                                </a>
+                            </div>
+                            <div class="col-md-9" style="padding-left: 72px;">
+                                <h3>
+                                    <%= n %>
+                                </h3>
+                                <ul>
+                                    <li>
+                                        <h6 style="display: inline; color:rgb(96, 152, 235)">Email : </h6>
+                                        <%= e %>
+                                    </li>
+                                    <li>
+                                        <h6 style="display: inline; color:rgb(96, 152, 235)">Phone : </h6>8175032333
+                                    </li>
+                                    <li>
+                                        <h6 style="display: inline; color:rgb(96, 152, 235)">Total number of courses :
+                                        </h6>
+                                        <%= cc.length %>
+                                    </li>
+                                    <li>
+                                        <h6 style="display: inline; color:rgb(96, 152, 235)">Address : </h6>MIG 332
+                                        Darpan
+                                        Colony Thatipur Gwalior
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+            <a href="#" data-bs-target="#update" data-bs-toggle="modal" class="nav-link">
+                <div class="col-md-12 mt-5 py-3"
+                    style="border-radius:25px; box-shadow:5px 5px 5px 5px rgb(225, 223, 223) ; padding-left: 18px ; background:linear-gradient(90.08deg, rgba(164, 209, 245, 0.724) 7.62%, #ebf9f9 84.8%)">
+                    Update profile info.</div>
+                    <!-- background:linear-gradient(90.08deg, rgba(65, 161, 239, 0.675) 7.62%, #ebf9f9 84.8%) -->
+            </a>
+            <% if(msg.length>0){ %>
+                <div class="alert alert-danger">
+                    <%= msg %>
+                </div>
+                <% }%>
+
+                    <% if(msg1.length>0){ %>
+                        <div class="alert alert-success">
+                            <%= msg1 %>
+                        </div>
+                        <% }%>
+
+                            <a href="#" data-bs-target="#changepass" data-bs-toggle="modal" class="nav-link">
+                                <div class="col-md-12 mt-4 py-3"
+                                    style="border-radius:25px; box-shadow:5px 5px 5px 5px rgb(225, 223, 223) ; padding-left: 18px ;  background:linear-gradient(90.08deg, rgba(164, 209, 245, 0.724) 7.62%, #ebf9f9 84.8%)">
+                                    Change password</div>
+                            </a>
+
+                            <a href="/logout" 65 class="nav-link mb-5">
+                                <div class="col-md-12 mt-4 py-3"
+                                    style="border-radius:25px; box-shadow:5px 5px 5px 5px rgb(225, 223, 223) ; padding-left: 18px ;   background:linear-gradient(90.08deg, rgba(164, 209, 245, 0.724) 7.62%, #ebf9f9 84.8%)">
+                                    Logout</div>
+                            </a>
+
+    </div><!--outer box-->
+    </div><!--container fluid end-->
+    </div>
+
+
+    <!--update profile modal-->
+    <div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/update_profile" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label>Name:</label>
+                            <input type="text" name="name" value="<%= n %>" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Email:</label>
+                            <input type="email" name="email" value="<%= e %>" readonly class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Add a phone no:</label>
+                            <input type="number" name="phone" value="<%= p %>" class="form-control">
+                        </div>
+                        <div>
+                            <label>Update image</label>
+                            <input type="file" name="image" class="form-control">
+                            <img src="<%= i.url %>" width="50px">
+                        </div>
+
+                        <button class="btn btn-info" type="submit">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--change pass modal-->
+    <div class="modal fade" id="changepass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">B Tech</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form action="/update_password" method="post">
+                        <div class="mb-3">
+                            <label>Current Password</label>
+                            <input type="password" name="currentpass" value="" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>New Passsword</label>
+                            <input type="password" name="npass" value="" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Confirm new password</label>
+                            <input type="password" name="cpass" class="form-control">
+                        </div>
+
+                        <button class="btn btn-info" type="submit">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>

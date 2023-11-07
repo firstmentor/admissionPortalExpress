@@ -1,0 +1,144 @@
+<%- include('./header.ejs') %>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+        <!--Bootstrap link-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+        <style>
+            h1 {
+                text-align: center;
+            }
+
+            .section-bg {
+                background-color: #021011f9;
+            }
+
+
+            .section1-2 {
+                padding:20px 20px;                
+                /* object-fit: none; */
+            }
+            
+            .div-text {
+                display: block;
+                text-align: justify;
+                color: rgba(255, 255, 255, 0.618);
+                font-family: Tahoma, Geneva, sans-serif;
+                font-size: 17px;
+                word-spacing: 4px;
+            }
+
+            .images3 img {
+                margin-top: 30px;
+                /* border: 4px solid red; */
+                object-fit: contain;
+                width: 350px
+            }
+
+            h3 {
+                /* padding-top: 10px; */
+                font-size: 60px;
+                color: rgba(137, 223, 236, 0.807);
+                text-align: center;
+            }
+
+            .div_sep{
+                /* border:4px solid red; */
+                padding:0px 20px;
+
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <h1 class="backg">About Institute</h1>
+        <!---------------------- section 1 ----------------------------------------------->
+        <section class="section-bg">
+            <div class="container section1-2">
+                <div class="row pt-3 pb-5 mx-auto">
+                    <div class="col-md-6 div_sep">
+                        <img src="https://images.collegedunia.com/public/college_data/images/campusimage/1477040324IITM4.jpg" width="100%" class=" pt-5">
+                    </div>
+
+                    <div class="col-md-6 div_sep">
+                        <h3>Establishment</h3>
+                        <p class="div-text ">
+                            Established in 1997 by Samata Lok Sansthan Trust at Gwalior, ITM is approved by AICTE, Govt.
+                            of India, and recognised by Govt. of M.P. and affiliated to Rajiv Gandhi Proudyogiki
+                            Vishwavidyalaya (University of Technology of M. P.), Bhopal. The Institute is conceived with
+                            an objective to impart quality education in the field of engineering and technology so that
+                            it emerges out as a world-class institution by contributing towards research and education
+                            and to produce high class engineers and technologists. The management of the institute is
+                            committed to rear this institution so that it becomes the apex centre for quality teaching,
+                            development, innovation and extension services in engineering and technology.
+                        </p>
+                    </div>
+                </div> <!--row end-->
+            </div> <!-- container end-->
+        </section> <!--section end-->
+        <div class="container" style="height:2px; background-color: rgb(255, 230, 0);"></div>
+
+        <!---------------------- section2---------------------------------------->
+        <section class="section-bg">
+            <div class="container section1-2">
+                <div class="row pt-5 pb-5">
+                    <div class="col-md-6 div_sep">
+                        <h3>TOP RANKING</h3>
+                        <p class=" div-text">
+                            The Institute recognizes the importance and need of such a scheme in the ideas and thoughts
+                            on various technological models. The teaching and learning methodologies follow a rigorous
+                            regime involving extended hours of work and challenging assignments.
+
+                            Curriculum delivery is affected through group and self learning seminars, conferences, case
+                            studies, live projects with industry, guest lectures and panel discussions with senior
+                            managers and professionals from the industry/Corporate sector /research organizations. The
+                            emphasis is on involving the students in learning and helping them to relate concepts and
+                            themes to technical cum management requirements. The sole objective is to provide value
+                            added technical education and to produce quality technologists and professionals who are
+                            capable to shape the society for better and better advancement and to improve the quality of
+                            life of Mankind.
+
+                        </p>
+                    </div>
+                    <!-- div2 -->
+                    <div class="col-md-6 pt-5 div_sep text-center">
+                        <img src="/images/about_pic2.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!------------------------------3---------------------------->
+        <section class="section-bg">
+        <div class="container div-text" style="height:2px; background-color: rgb(255, 230, 0);"></div>
+        <div class="container pt-5 pb-3 ">
+            <div class="pb-5">
+                <p class="div-text text-white" style="display: block;">Today, time compression has become one of the
+                    necessary conditions for successful
+                    functioning of an organization. Organizations need to recreate a lean, thin and agile entity from
+                    the large scale behemoth that it is today. This institute’s rehabilitation process is knowledge
+                    driven in terms of strategy, technology or logic of competitive success. This is achieved by
+                    developing amongst students a culture of inquiry and research through highly competitive academic
+                    environment, close student-faculty interaction and linkages with industry and other teaching
+                    academic institutions. Monitoring of students by senior managers and professionals from technical
+                    world, summer internship projects are the significant measures to abreast students with the latest
+                    development and requirements of professional, technological and corporate world.
+
+                    The Institute provides an academic environment with accent on self-learning. Students are actively
+                    involved in academic and co-curricular activities. ITM is a recognised Centre of Research in
+                    Engineering and Technology.</p>
+            </div>
+        </div>
+        </section>
+    </body>
+    </html>
+
+    <%- include('./footer.ejs') %>

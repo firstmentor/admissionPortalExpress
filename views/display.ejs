@@ -1,0 +1,115 @@
+<%- include('./header.ejs') %>
+    <br>
+    <h2 class="text-center">Course Display</h2>
+
+    <div class="container">
+        <table class="table table-bordered table-hover mt-3">
+
+            <tr class="table-dark">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Comment</th>
+                <th>Action</th>
+
+            </tr>
+
+            <% d.forEach((item)=>{ %>
+                <% if (item.userId==id){ %>
+                    <% if (item.course==='Btech' ){ %>
+                        <tr class="table-light">
+                            <td>
+                                <%= item._id %>
+                            </td>
+                            <td>
+                                <%= item.name%>
+                            </td>
+                            <td>
+                                <%= item.email%>
+                            </td>
+                            <td>
+                                <%= item.course%>
+                            </td>
+                            <td>
+                                <%= item.phone%>
+                            </td>
+                            <td>
+                                <%= item.status%>
+                            </td>
+                            <td>
+                                <%= item.comment%>
+                            </td>
+                            <td>
+                                <a href="/view/<%= item._id %>" class="btn btn-info">View</a>
+                                <a href="/edit/<%= item._id %>" class="btn btn-danger">Edit</a>
+                                <a href="/delete/<%= item._id %>" class="btn btn-danger" hidden>Delete</a>
+                            </td>
+                        </tr>
+                        <% }else if (item.course==='BCA' ){ %>
+                            <tr class="table-primary">
+                                <td>
+                                    <%= item._id %>
+                                </td>
+                                <td>
+                                    <%= item.name%>
+                                </td>
+                                <td>
+                                    <%= item.email%>
+                                </td>
+                                <td>
+                                    <%= item.course%>
+                                </td>
+                                <td>
+                                    <%= item.phone%>
+                                </td>
+                                <td>
+                                    <%= item.status%>
+                                </td>
+                                <td>
+                                    <a href="/view/<%= item._id %>" class="btn btn-info">View</a>
+                                    <a href="/edit/<%= item._id %>" class="btn btn-danger">Edit</a>
+                                    <a href="/delete/<%= item._id %>" class="btn btn-danger" hidden>Delete</a>
+                                </td>
+                            </tr>
+                            <%}else { %>
+                               
+                                    <tr class="table-danger">
+                                        <td>
+                                            <%= item._id %>
+                                        </td>
+                                        <td>
+                                            <%= item.name%>
+                                        </td>
+                                        <td>
+                                            <%= item.email%>
+                                        </td>
+                                        <td>
+                                            <%= item.course%>
+                                        </td>
+                                        <td>
+                                            <%= item.phone%>
+                                        </td>
+                                        <td>
+                                            <%= item.status%>
+                                        </td>
+                                        <td>
+                                            <%= item.comment%>
+                                            <h1>sdmnfg</h1>
+                                        </td>
+                                        <td>
+                                            <a href="/view/<%= item._id %>" class="btn btn-info">View</a>
+                                            <a href="/edit/<%= item._id %>" class="btn btn-danger">Edit</a>
+                                            <a href="/delete/<%= item._id %>" class="btn btn-danger" hidden>Delete</a>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                        <% }else{ %>
+                                           <!--empty else block-->
+                                            <% } %>
+                                                <% }) %> <!--forEach loop end-->
+        </table>
+    </div>
+    <%- include('./footer.ejs') %>
